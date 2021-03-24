@@ -1,0 +1,28 @@
+{
+  "name": "job_search_app",
+  "version": "1.0.0",
+  "description": "this app wil help users to search for job and post job",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faraamcode/job_search_app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faraamcode/job_search_app/issues"
+  },
+  "homepage": "https://github.com/faraamcode/job_search_app#readme",
+  "dependencies": {
+    "env": "0.0.2",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "pg": "^8.5.1",
+    "sequelize": "^6.6.2"
+  }
+}
