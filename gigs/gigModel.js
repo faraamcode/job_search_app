@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize") 
 // const { DataTypes } = require("sequelize/types") 
-const db = require("./connection")
+const db = require("../config/connection")
 const Gigs = db.define('gigs', {
     job_name: {type : Sequelize.STRING },
     job_description : {type : Sequelize.STRING },
