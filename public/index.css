@@ -6,7 +6,7 @@
   --clr-grey : #F3F6F9;
   --ff-primary: 'Roboto', sans-serif;
   --ff-secondary: 'Open Sans', sans-serif;
-  --transition: all 0.3s linear;
+  --transition: all 1s linear;
   --spacing: 0.25rem;
   --radius: 0.5rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -112,26 +112,29 @@ img {
 .header-section{
     width: 100vw;
     height: 60vh;
-    background: red;
+    /* background: red; */
     position: relative;
 }
 .header{
     position: absolute; 
     top: 0;
-    z-index: 3;
+    z-index: 5;
     background: var(--clr-black);
     width: 100vw;
     height: 6rem;
     background: transparent;
-    z-index: 3;
+    /* z-index: 3; */
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--clr-white);
 }
 .hero{
+    top: 0;
+    width: 100vw;
     z-index: 1;
-    position: relative;
+    position: absolute;
+    transition: var(--transition);
 }
 .hero-img{
     height: 60vh;
@@ -159,9 +162,6 @@ img {
    background: yellow;
    margin: auto auto;
 }
-.hero-info h3{
-    
-}
 .section{
     width: 85vw;
     margin: 3rem auto;
@@ -180,10 +180,12 @@ img {
 .partner-1{
     /* background: blue; */
     grid-area: a;
+   
 }
 .partner-2{
     /* background:red; */
     grid-area: b;
+    width: 100%;
 }
 .partner-3{
     /* background:green; */
@@ -192,6 +194,8 @@ img {
 .single-partner{
     background: var(--clr-grey);
     position: relative;
+    overflow-x: hidden;
+   
 }
 
 
@@ -202,10 +206,15 @@ display: grid;
 justify-content: center;
 align-items: center;
 height: 100%;
+width: 100%;
+margin: 0;
+padding: 0;
+transition: var(--transition);
 }
 .data-1{
     /* height: 100%; */
     grid-template-rows: 1fr 1fr;
+    /* transform: translateX(-100%); */
 }
 .data-2{
     /* height: 100%; */
@@ -215,8 +224,32 @@ height: 100%;
     /* height: 100%; */
     grid-template-columns: 1fr 1fr;
 }
+.left, .previous{
+    transform: translateX(101%);  
+    
+}
+.right, .next{
+    transform: translateX(-101%);  
+    
+}
+.previous{
+    z-index: 1;
+    transform: translateX(-100%);  
+}
+.next{
+    transition: none;
+    transform: translateX(100%);  
+    z-index: 2;
+}
+.active{
+    z-index: 3;
+}
+.show-partner, .active{
+    transform: translateX(0%);  
+}
 .partner-img img{
     height: 100%;
+    width: 100%;
     object-fit: cover;
 }
 .partner-img{
