@@ -1,7 +1,7 @@
 const partnerElements1 = document.querySelector(".partner-1");
 const partnerElements2 = document.querySelector(".partner-2");
 const partnerElements3 = document.querySelector(".partner-3");
-
+const Header = document.querySelector(".header")
 //
 const herocontainer = document.querySelectorAll(".hero");
 const ToggleHero = setInterval(()=> herocontainer.forEach((item)=> {
@@ -17,7 +17,7 @@ const ToggleHero = setInterval(()=> herocontainer.forEach((item)=> {
         item.classList.add("next")
 
     }
-}), 3000)
+}), 5000)
 // 
 
 const first1 = partnerElements1.firstElementChild
@@ -63,4 +63,13 @@ window.addEventListener("DOMContentLoaded", ()=>{
     ToggleFunction(first2, second2, 7000)
     ToggleFunction(first3, second3, 9000)
     ToggleHero()
+})
+
+window.addEventListener("scroll", ()=>{
+    if(window.scrollY > 200){
+       Header.classList.add("fixed-header") 
+    }else{
+        Header.classList.remove("fixed-header") 
+
+    }
 })
