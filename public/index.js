@@ -4,7 +4,12 @@ const partnerElements3 = document.querySelector(".partner-3");
 const Header = document.querySelector(".header")
 //
 const herocontainer = document.querySelectorAll(".hero");
-const ToggleHero = setInterval(()=> herocontainer.forEach((item)=> {
+// 
+const menus = document.querySelectorAll(".menu");
+const submenu = document.querySelector(".sub-menu");
+
+console.log(menus);
+const ToggleHero = ()=> {setInterval(()=> herocontainer.forEach((item)=> {
     if(item.classList.contains("active")){
         item.classList.remove("active")
         item.classList.add("previous")
@@ -18,6 +23,8 @@ const ToggleHero = setInterval(()=> herocontainer.forEach((item)=> {
 
     }
 }), 5000)
+
+}
 // 
 
 const first1 = partnerElements1.firstElementChild
@@ -72,4 +79,17 @@ window.addEventListener("scroll", ()=>{
         Header.classList.remove("fixed-header") 
 
     }
+})
+// 
+const removeSubmunu = ()=>{
+    setTimeout(()=>{
+        submenu.classList.remove("show-submenu")
+
+    },4000)
+}
+menus.forEach((menu)=>{
+    menu.addEventListener("mouseover",(e)=> {
+     submenu.classList.add("show-submenu")
+     removeSubmunu();   
+    });
 })
